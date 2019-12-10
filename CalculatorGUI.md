@@ -1,19 +1,23 @@
 # CalculatorGUI
 from tkinter import *
 
+#calculator class
 class Calculator:
-    def __init__(self):
+   def __init__(self):
         window = Tk()
         window.title("Calculator")
+
 #frame1
         frame1 = Frame(window)
         frame1.pack()
         self.results = Label(frame1, text = "100")
         self.results.pack()
+
 #frame2
         frame2 = Frame(window)
         frame2.pack()
         self.v1 = DoubleVar()
+
 #buttons
         btClear = Button(frame2, text = "Clear", fg = "red", width = 5,
                     command = self.delButton)
@@ -53,6 +57,7 @@ class Calculator:
                         command = self.processButton)
         btZero = Button(frame2, text = "0", width = 5,
                         command = self.processButton)
+
 #buttonConfiguration        
         btClear.grid(row = 1, column = 1)
         btSign.grid(row = 1, column = 2)
@@ -80,6 +85,5 @@ class Calculator:
         pass
     def delButton(self):
         self.results["text"] = "0"
-
 Calculator()
 
