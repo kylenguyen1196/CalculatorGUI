@@ -4,27 +4,31 @@
 from tkinter import *
 
 #class calculator
+
 class Calculator:
     def __init__(self):
 
 #creating window
+        
         window = Tk()
         window.title("Calculator")
         self.equation = StringVar()
         self.expression = ""
 
 #creating frame 1    
+        
         frame1 = Frame(window)
         frame1.pack()
-
         results = Entry(frame1, text = self.equation)
         results.pack()
 
 #creating frame 2
+        
         frame2 = Frame(window)
         frame2.pack()
 
 #creating all buttons for calculator
+        
         btClear = Button(frame2, text = "Clear", fg = "red", width = 5,
                     command = self.delButton)
         btDivide = Button(frame2, text = "/", fg = "orange", width = 5,
@@ -38,8 +42,7 @@ class Calculator:
         btEqual = Button(frame2, text = "=", fg = "orange", width = 5,
                     command = self.equalButton)
         btDecimal = Button(frame2, text = ".", width = 5,
-                           command = lambda: self.processButton("."))
-        
+                           command = lambda: self.processButton(".")
         btOne = Button(frame2, text = "1", width = 5,
                        command = lambda: self.processButton(1))
         btTwo = Button(frame2, text = "2", width = 5,
@@ -84,6 +87,7 @@ class Calculator:
         window.mainloop()
 
 #processes for buttons      
+    
     def processButton(self,num):
         self.expression += str(num)
         self.equation.set(self.expression)
@@ -101,6 +105,5 @@ class Calculator:
         except:
             self.equation.set("Err")
             self.expression = ""
-
     
 Calculator()
